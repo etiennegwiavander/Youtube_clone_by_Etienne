@@ -1,16 +1,18 @@
 import {useState, useEffect} from 'react'
 import { Box, Stack, Typography} from '@mui/material'
 import {Sidebar, Videos} from './'
-import { APIFetch } from '../utils/ApiFetch'
+import { apiFetch } from '../utils/ApiFetch'
 
 
 
 const Feed = () => {
 
-  const [selectedCategory, setSelectedCategory] = useState('new')
+  const [selectedCategory, setSelectedCategory] = useState('New')
+  const [videos, setVideos] = useState([ ])
 
   useEffect( () => {
-    APIFetch(`search?part=snippet&q=${selectedCategory}`)
+    apiFetch(`search?part=snippet&q=${selectedCategory}`)
+    .then((data)=> setVideos(data.items))
   }, [selectedCategory]);
 
 
@@ -20,7 +22,7 @@ const Feed = () => {
         
         <Sidebar
           selectedCategory ={selectedCategory}
-          setSelectedCategory ={selectedCategory}
+          setSelectedCategory ={setSelectedCategory}
         />
 
         <Typography className='copyright'
@@ -42,7 +44,7 @@ const Feed = () => {
           {selectedCategory} <span style={{ color: '#F31503'}}> Videos </span>
         </Typography>
 
-        <Videos Videos={[  ]}/>
+        <Videos videos={ videos } />
 
       </Box>
 
