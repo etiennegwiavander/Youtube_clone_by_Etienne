@@ -14,6 +14,7 @@ const SearchBar = () => {
         if(searchTerm){
             navigate(`/search/${searchTerm}`)
             console.log('loaded...')
+             
             setSearchTerm('')
         }
     }

@@ -6,8 +6,7 @@ import { useParams } from 'react-router-dom'
 
 
 
-const searchFeed = () => {
-
+const SearchFeed = () => {
   const [videos, setVideos] = useState([ ])
   const { searchTerm } = useParams()
 
@@ -18,7 +17,7 @@ const searchFeed = () => {
 
 
   return (
-    <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2}}>
+    <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2, ml: {sx: "150px", md: "100px"}}}>
         <Typography
           variant='h4'
           fontWeight='bold'
@@ -37,4 +36,4 @@ const searchFeed = () => {
   )
 }
 
-export default searchFeed
+export default SearchFeed
