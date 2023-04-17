@@ -14,7 +14,7 @@ const  VideoCard = ({ video: { id: { videoId }, snippet }}) => {
                     xs: '100%',
                     sm:'358px',
                     md:'320px'
-                }, height: 180}}
+                }, height: 180}} 
                 component= 'div'
             />
         </Link>
