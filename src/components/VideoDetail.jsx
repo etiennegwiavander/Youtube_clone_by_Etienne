@@ -20,7 +20,8 @@ const VideoDetail = () => {
     apiFetch(`search?part=snippet&relatedToVideoId=${id}&type=video`)
       .then((data)=> setVideos(data.items))
   }, [id])
-   
+  
+  //  this is the area that will carry the skeleton loading
   if(!videoDetial?.snippet) return 'Loading...'
 
   const { snippet:{ title, channelId, channelTitle }, statistics: {viewCount, likeCount}} = videoDetial
@@ -61,7 +62,7 @@ const VideoDetail = () => {
             </Box>
           </Box>
         </Box>
-          <Box px={2} py={{md: 1, xs: 5}} justifyContent="center" alignItems="center">
+          <Box px={2} py={{md: 1, xs: 5}} justifyContent="center" alignItems="center" >
             <Videos videos={videos} direction="column"/>
           </Box>
       </Stack>

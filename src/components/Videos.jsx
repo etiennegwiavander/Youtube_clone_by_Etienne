@@ -5,6 +5,8 @@ import { VideoCard, ChannelCard} from './'
 
 const Videos = ({ videos, direction}) => {
     // console.log(videos)
+
+     //  this is the area that will carry the skeleton loading
     if(!videos?.length) return 'Loading...'
 
     return(
