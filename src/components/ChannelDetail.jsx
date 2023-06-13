@@ -40,7 +40,6 @@ const ChannelDetail = () => {
           <Videos videos={videos}/>
         
       </Box>
-      
 
     </Box>
   )

@@ -13,7 +13,6 @@ const VideoDetail = () => {
   const [videoDetial, setVideoDetial] = useState(null)
   const [videos, setVideos] = useState([])
   const { id } = useParams()
-  const n = 
 
   useEffect(()=>{
     apiFetch(`videos?part=snippet,statistics&id=${id}`)
@@ -25,20 +24,12 @@ const VideoDetail = () => {
   
   //  this is the area that will carry the skeleton loading
   if(!videoDetial?.snippet) return(
-    <Stack direction='row' sx={{ xs: {direction: 'column', position: ' center'  }}} flexWrap='wrap' gap={2}> 
-
-        {[...Array(n)].map((e, i) =>
-            <Stack>
-                <Skeleton max={4} variant='rectangle' sx={{ backgroundColor: 'silver', width: '300px', height:'200px'}}  animation='wave' />
-                <Skeleton  sx={{ backgroundColor: 'silver'}}  animation='wave' />
-                <Skeleton  sx={{backgroundColor: 'silver' }}  animation='wave' />
-            </Stack> 
-        )}
-
-    </Stack>
-)
+    <Skeleton variant="rectangle" sx={{  position: 'sticky', top: '379px', backgroundColor:'silver'}} width='1300px' height='1000px' animation='wave' backgroundColor='silver'/>
+      
+  )
 
   const { snippet:{ title, channelId, channelTitle }, statistics: {viewCount, likeCount}} = videoDetial
+  
 
   return (
     <Box minHeight='95vh' mt="-8px">

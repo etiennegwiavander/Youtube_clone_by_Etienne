@@ -6,15 +6,12 @@ import Skeleton from '@mui/material/Skeleton'
 
 
 const Videos = ({ videos, direction}) => {
-    // console.log(videos)
-    const [isLoading, setIsLoading] = useState(true)
-
+    
     const n = 9
 
      //  this is the area that will carry the skeleton loading
     if(!videos?.length) return(
         <Stack direction='row' sx={{ xs: {direction: 'column', ml: '70px' }}} flexWrap='wrap' gap={2}> 
-
             {[...Array(n)].map((e, i) =>
                 <Stack>
                     <Skeleton max={6} variant='rectangle' sx={{ backgroundColor: 'silver', width: '300px', height:'200px'}}  animation='wave' />
@@ -22,7 +19,6 @@ const Videos = ({ videos, direction}) => {
                     <Skeleton  sx={{backgroundColor: 'silver' }}  animation='wave' />
                 </Stack> 
             )}
-
         </Stack>
     )
 
