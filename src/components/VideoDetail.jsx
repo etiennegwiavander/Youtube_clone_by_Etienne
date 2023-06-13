@@ -23,10 +23,17 @@ const VideoDetail = () => {
   }, [id])
   
   //  this is the area that will carry the skeleton loading
-  if(!videoDetial?.snippet) return(
-    <Skeleton variant="rectangle" sx={{  position: 'sticky', top: '379px', backgroundColor:'silver'}} width='1300px' height='1000px' animation='wave' backgroundColor='silver'/>
+  if(!videoDetial?.snippet){ 
+    return 'LocalDining...'}else{
       
-  )
+    }
+
+  
+  
+  // (
+  //   <Skeleton variant="rectangle" sx={{  position: 'sticky', top: '379px', backgroundColor:'silver'}} width='1300px' height='1000px' animation='wave' backgroundColor='silver'/>
+      
+  // )
 
   const { snippet:{ title, channelId, channelTitle }, statistics: {viewCount, likeCount}} = videoDetial
   
