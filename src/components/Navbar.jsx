@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom'
 import { Stack } from '@mui/material'
-import { logo } from '../utils/constants'
+import  logo  from '../assets/logo.png'
 import SearchBar from './SearchBar'
 
  

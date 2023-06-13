@@ -12,7 +12,7 @@ import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 
-export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
+export const logo = '<a href="https://www.flaticon.com/free-icons/files-and-folders" title="files and folders icons">Files and folders icons created by Adib Sulthon - Flaticon</a>';
 
 export const categories = [
   { name: 'New', icon: <HomeIcon />, },
